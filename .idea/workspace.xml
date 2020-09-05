@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b412173d-f691-48da-b83c-9a10f97fbb76" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="R Script" />
+      </list>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="522a4b26-d32b-418c-bc28-9655f4985f7b" />
+  <component name="ProjectId" id="1h358Si45qLWaPKiuKK5jJUtP3D" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b412173d-f691-48da-b83c-9a10f97fbb76" name="Default Changelist" comment="" />
+      <created>1599226775613</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599226775613</updated>
+      <workItem from="1599226776671" duration="819000" />
+      <workItem from="1599229689060" duration="122000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="488" y="283" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599229744212">
+      <screen x="0" y="25" width="2048" height="1198" />
+    </state>
+    <state x="488" y="283" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.2048.1198@0.25.2048.1198" timestamp="1599229744212" />
+    <state x="533" y="260" key="SettingsEditor" timestamp="1599229774958">
+      <screen x="0" y="25" width="2048" height="1198" />
+    </state>
+    <state x="533" y="260" key="SettingsEditor/0.25.2048.1198@0.25.2048.1198" timestamp="1599229774958" />
+    <state x="689" y="295" key="search.everywhere.popup" timestamp="1599229781363">
+      <screen x="0" y="25" width="2048" height="1198" />
+    </state>
+    <state x="689" y="295" key="search.everywhere.popup/0.25.2048.1198@0.25.2048.1198" timestamp="1599229781363" />
+  </component>
+</project>

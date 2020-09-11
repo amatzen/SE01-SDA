@@ -1,0 +1,150 @@
+---
+title: "Deskriptiv statistik"
+author: Alexander Matzen <alexander@amatzen.dk>
+date: 11/09/2020
+output:
+    html_notebook:
+        code_folding: hide
+---
+
+## Opgave 1
+Anvend tilfældige tal funktionen i R til at generere et normalfordelt datasæt på 500 observationer med middelværdi lig 70 og standardafvigelse lig 15. Lav en passende grafisk præsentation.
+
+```{r}
+amountData <- 500
+mean <- 70
+standardDeviation <- 15
+
+data <- rnorm(amountData, mean = mean, sd = standardDeviation)
+hist(data)
+
+```
+
+## Opgave 2
+I ”Champinon Vinyl” - en butik, der udelukkende forhandler gamle LP-plader (Forretningens navn er hentet fra Nick Hornby’s roman ”High Fidelity”), har man på 30 forskellige dage i en tilfældig måned registreret antallet af kunder per dag til:
+
+### Delopgave a
+```{r}
+# Indsætter data i en vektor (c)
+data <- c(72,89,78,87,86,40,73,83,77,82,70,60,63,56,59,72,44,28,68,69,98,52,68,74,53,84,81,77,73,71)
+
+
+print(paste(
+  "Antal observationer: ",
+  format(length(data),digits = 4)
+))
+
+print(paste(
+  "Middeltal / Gennemsnit: ",
+  format(mean(data), digits = 4)
+))
+
+print(paste(
+  "Standardafvigelsen / Spredning: ",
+  format(sd(data), digits = 4)
+))
+
+summary(data)
+```
+
+Der er gennemsnitligt omkring 70 kunder i butikken pr. dag i observationsperioden. Den gennemsnitlige variation fra denne er på 15 kunder.
+Der er minimum 28 kunder på en dag, og maksimalt 98 kunder på en dag i observationsperioden.
+
+### Delopgave b
+Lav en grafisk afbildning af antal kunder per dag. (Histogram) ved anvendelse af R
+Anvend en fornuftig opdeling af intervaller. Kommenter fordelingen.
+```{r}
+hist(data)
+```
+
+Der er langt de fleste dage omkring 80 kunder om dagen, men der er også tilfælde, hvor det går ned til under 40-50 kunder om dagen i observationsperioden.
+
+### Delopgave c
+Angiv 5-punktsopsummeringen og kvartilafstanden.
+```{r}
+library(knitr)
+
+print(fivenum(data))
+writeLines("")
+writeLines("Kvartilsæt:")
+print(quantile(data))
+
+```
+
+### Delopgave d
+Anvend R til at opstille et boksdiagram for materialet.
+```{r}
+boxplot(data)
+```
+
+### Delopgave e
+Sammenlign fordelingen i dette datasæt med den, som blev fundet i opgave 1.
+
+Der er en væsentlig skævfordeling. Observationerne i opgave 1 var mere ligefordelt og distribueret, hvor at observationerne i opgave 2 var mere skævfordelt til fordel for flere dage med flere kunder i observationsperioden.
+
+## Opgave 3
+Den første januar 2008 publicerede dagbladet “Politiken” resultaterne af en quiz, som dagbladet havde udskrevet nøjagtig et år tidligere. Man stillede 15 spørgsmål til begivenheder, som kunne have fundet sted i året 2007. For eksempel ”Vil Fidel Castro afgå ved døden i 2007 (han lever som bekendt stadig)”?
+
+### Delopgave a
+Beregn det gennemsnitlige antal korrekte svar og standardafvigelsen
+
+```{r}
+
+replies <- c(0, 0, 0, 15, 119, 522, 1451, 2490, 2808, 2265, 1210, 407, 122, 24, 2, 0)
+correctReplies <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+
+#data <- matrix(c(correctReplies, replies), nrow = 16, ncol = 2, byrow = FALSE)
+data <- data.frame(
+    "KorrekteSvar" = correctReplies,
+    "Hyppighed" = replies
+)
+
+print(paste(
+    "Totale svar: ",
+    sum(replies)
+))
+
+print(paste(
+    "Gennemsnitligt antal korrekte svar: ",
+    format(
+        mean(rep(data$KorrekteSvar, data$Hyppighed)), # tilsvarende til sum(replies*correctReplies)/sum(replies)
+        digits = 3
+    )
+))
+
+print(paste(
+    "Standardafvigelsen: ",
+    format(
+        sd(rep(data$KorrekteSvar, data$Hyppighed)),
+        digits = 3
+    )
+))
+
+```
+
+### Delopgave b
+Kommenter på fordelingens udseende
+
+## Opgave 4
+Nedenstående datasæt beskriver den gennemsnitlige opkaldstid i sekunder for en række forskellige operatører i et call-center. Beregn gennemsnit og kvartiler. Foretag på denne baggrund en undersøgelse for ekstreme observationer i materialet. Anvend R.
+```{r}
+
+data <- c(7.0,6.9,8.2,7.8,7.7,7.3,6.8,6.7,8.2,8.4,7.0,6.7,7.5,7.2,7.9,7.6,6.7,6.3,6.6,5.6,7.8,5.5,6.2,5.8,6.1,5.8,6.0,7.3,7.5,7.3,7.2,7.4,7.2,7.6)
+
+g_data <- cut(data, 5) # Grupperer dataen i 5 intervaller
+g_data <- table(g_data) # Gør at dataen bliver opstillet som hyppighedstabel
+
+print(paste(
+    "Gennemsnitlig svartid:",
+    format(
+        mean(g_data),
+        digits = 3
+    ), "sekunder"
+))
+
+writeLines("")
+writeLines("Kvartilsæt:")
+print(quantile(g_data))
+
+
+```
